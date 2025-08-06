@@ -61,6 +61,7 @@ const handleAnalyze = async ({ companyName, jobTitle, jobDescription, file }: { 
         await kv.set(`resume:${uuid}`, JSON.stringify(data));
         setStatusText('Analysis complete, redirecting...');
         console.log(data);
+        navigate(`/resume/${uuid}`);
     }
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
